@@ -9,7 +9,7 @@ const protect = async (req, res, next) => {
   }
   try {
     const decodedToken = await admin.auth().verifyIdToken(token);
-    // req.user=decodedToken
+    req.user = decodedToken;
 
     let user = await User.findOne({ uid: decodedToken.uid });
     if (!user) {

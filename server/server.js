@@ -4,9 +4,10 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
 dotenv.config();
+// connect to DB
 connectDB();
 const app = express();
-
+//middleware
 app.use(cors());
 app.use(express.json());
 
